@@ -1,0 +1,36 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AppSecAssignment.Login" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Table ID="Table1" runat="server" Height="113px" Width="753px">
+                <asp:TableRow ID ="TableRow1" runat="server">
+                    <asp:TableCell ID ="TableCell1" runat="server" style="text-align: left; width:25%">
+                                    <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell ID ="TableCell2" runat="server" style="text-align: left">
+                                    <asp:TextBox ID="tbEmail" runat="server"></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow ID ="TableRow2" runat="server">
+                    <asp:TableCell ID ="TableCell3" runat="server" style="text-align: left">
+                                    <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell ID ="TableCell4" runat="server" style="text-align: left">
+                                    <asp:TextBox ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+                </asp:Table>
+            <asp:Label ID="lblMsg" runat="server"></asp:Label>
+            <br />
+            <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" />
+        </div>
+    </form>
+</body>
+</html>

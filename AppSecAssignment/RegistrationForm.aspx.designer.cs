@@ -51,13 +51,13 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell1;
 
         /// <summary>
-        /// lblFName control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFName;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
         /// TableCell2 control.
@@ -69,13 +69,31 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell2;
 
         /// <summary>
-        /// tbFName control.
+        /// tbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFName;
+        protected global::System.Web.UI.WebControls.TextBox tbEmail;
+
+        /// <summary>
+        /// emailChkr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailChkr;
+
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// TableRow2 control.
@@ -96,13 +114,13 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell3;
 
         /// <summary>
-        /// lblLName control.
+        /// lblFName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLName;
+        protected global::System.Web.UI.WebControls.Label lblFName;
 
         /// <summary>
         /// TableCell4 control.
@@ -114,13 +132,22 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell4;
 
         /// <summary>
-        /// tbLName control.
+        /// tbFName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbLName;
+        protected global::System.Web.UI.WebControls.TextBox tbFName;
+
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
         /// TableRow3 control.
@@ -141,13 +168,13 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell5;
 
         /// <summary>
-        /// lblCard control.
+        /// lblLName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCard;
+        protected global::System.Web.UI.WebControls.Label lblLName;
 
         /// <summary>
         /// TableCell6 control.
@@ -159,13 +186,22 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell6;
 
         /// <summary>
-        /// tbCard control.
+        /// tbLName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCard;
+        protected global::System.Web.UI.WebControls.TextBox tbLName;
+
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
         /// TableRow4 control.
@@ -186,13 +222,13 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell7;
 
         /// <summary>
-        /// lblEmail control.
+        /// lblCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.Label lblCard;
 
         /// <summary>
         /// TableCell8 control.
@@ -204,13 +240,22 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell8;
 
         /// <summary>
-        /// tbEmail control.
+        /// tbCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmail;
+        protected global::System.Web.UI.WebControls.TextBox tbCard;
+
+        /// <summary>
+        /// RequiredFieldValidator4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
         /// TableRow5 control.
@@ -231,13 +276,13 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell9;
 
         /// <summary>
-        /// lblPassword control.
+        /// lblDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
+        protected global::System.Web.UI.WebControls.Label lblDOB;
 
         /// <summary>
         /// TableCell10 control.
@@ -249,22 +294,22 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell10;
 
         /// <summary>
-        /// tbPassword control.
+        /// tbDOB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPassword;
+        protected global::System.Web.UI.WebControls.TextBox tbDOB;
 
         /// <summary>
-        /// passwdChkr control.
+        /// RequiredFieldValidator5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwdChkr;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
 
         /// <summary>
         /// TableRow6 control.
@@ -285,13 +330,13 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell11;
 
         /// <summary>
-        /// lblDOB control.
+        /// lblPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDOB;
+        protected global::System.Web.UI.WebControls.Label lblPassword;
 
         /// <summary>
         /// TableCell12 control.
@@ -303,13 +348,31 @@ namespace AppSecAssignment
         protected global::System.Web.UI.WebControls.TableCell TableCell12;
 
         /// <summary>
-        /// tbDOB control.
+        /// tbPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDOB;
+        protected global::System.Web.UI.WebControls.TextBox tbPassword;
+
+        /// <summary>
+        /// RequiredFieldValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+
+        /// <summary>
+        /// passwdChkr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label passwdChkr;
 
         /// <summary>
         /// btnSubmit control.
