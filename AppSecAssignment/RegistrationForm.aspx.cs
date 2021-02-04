@@ -11,7 +11,6 @@ using System.Data;
 using System.Security.Cryptography;
 using System.Text;
 using System.Configuration;
-
 namespace AppSecAssignment
 {
     public partial class RegistrationForm : System.Web.UI.Page
@@ -142,7 +141,7 @@ namespace AppSecAssignment
             
                 using (SqlConnection con = new SqlConnection(MYDBConnectionString))
                 {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Users VALUES(@Email, @First_Name, @Last_Name, @Credit_Card, @Date_Of_Birth, @PasswordHash, @PasswordSalt, @EmailVerified, @IV, @Key)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Users VALUES(@Email, @First_Name, @Last_Name, @Credit_Card, @Date_Of_Birth, @PasswordHash, @PasswordSalt, @IV, @Key, @Questions, @Answer)"))
                 {
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
@@ -154,9 +153,11 @@ namespace AppSecAssignment
                         cmd.Parameters.AddWithValue("@Date_Of_Birth", tbDOB.Text.Trim());
                         cmd.Parameters.AddWithValue("@PasswordHash", finalHash);
                         cmd.Parameters.AddWithValue("@PasswordSalt", salt);
-                        cmd.Parameters.AddWithValue("@EmailVerified", DBNull.Value);
                         cmd.Parameters.AddWithValue("@IV", Convert.ToBase64String(IV));
                         cmd.Parameters.AddWithValue("@Key", Convert.ToBase64String(Key));
+                        cmd.Parameters.AddWithValue("@Questions", ddlQuestions.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Answer", tbAnswer.Text.Trim());
+
                         cmd.Connection = con;
                         con.Open();
 

@@ -46,6 +46,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            
             <asp:Table ID="Table1" runat="server" Height="113px" Width="753px">
                 <asp:TableRow ID ="TableRow1" runat="server">
                     <asp:TableCell ID ="TableCell1" runat="server" style="text-align: left; width:25%">
@@ -86,7 +87,7 @@
                                    
                     </asp:TableCell>
                     <asp:TableCell ID ="TableCell8" runat="server" style="text-align: left">
-                                    <asp:TextBox ID="tbCard" runat="server" ></asp:TextBox>
+                                    <asp:TextBox ID="tbCard" runat="server" MaxLength="16" MinLength ="16"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="tbCard" ErrorMessage="Credit card is a required field."></asp:RequiredFieldValidator>
             
 
@@ -112,13 +113,30 @@
                         <asp:Label ID="passwdChkr" runat="server" ></asp:Label> 
                     </asp:TableCell>
                 </asp:TableRow>
-                
+                <asp:TableRow>
+                    <asp:TableCell>
+                                    <asp:Label ID="Questions" runat="server" Text="Recovery questions"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:DropDownList ID="ddlQuestions" runat="server">
+                <asp:ListItem>Name of first pet</asp:ListItem>
+                <asp:ListItem>Favourite song</asp:ListItem>
+                <asp:ListItem>Name of mother</asp:ListItem>
+                <asp:ListItem>Name of father</asp:ListItem>
+            </asp:DropDownList>
+                        <br />
+            <asp:TextBox ID="tbAnswer" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="tbAnswer" ErrorMessage="This is a required field."></asp:RequiredFieldValidator>
+
+                    </asp:TableCell>
+                </asp:TableRow>
             </asp:Table>         
 <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response"/>
             <br />
             <script>
                 grecaptcha.ready(function () {
-                    grecaptcha.execute('6LdjCEUaAAAAAH43Z3uxxIPjhPEJtmehUViiAlPs', { action: 'Login.aspx' }).then(function (token) {
+                    grecaptcha.execute('6LdjCEUaAAAAAH43Z3uxxIPjhPEJtmehUViiAlPs', { action: 'RegistrationForm.aspx' }).then(function (token) {
                         document.getElementById("g-recaptcha-response").value = token;
                     });
                 });

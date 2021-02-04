@@ -9,12 +9,13 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Timers;
 
 namespace AppSecAssignment
 {
     public partial class Login : System.Web.UI.Page
     {
-        public int attempt = 0;
+        
         public class MyObject
         {
             public string success { get; set; }
@@ -22,9 +23,9 @@ namespace AppSecAssignment
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         protected string getDBHash(string email)
         {
             string h = null;
@@ -90,17 +91,20 @@ namespace AppSecAssignment
             finally { con.Close(); }
             return s;
         }
-        
+        static int attempt = 0;
+        static int left = 2;
+
+
+
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
             string pwd = tbPassword.Text.ToString().Trim();
             string userid = tbEmail.Text.ToString().Trim();
             SHA512Managed hashing = new SHA512Managed();
             string dbHash = getDBHash(userid);
             string dbSalt = getDBSalt(userid);
-            lblMsg.Text = attempt.ToString();
             try
             {
                 if (dbSalt != null && dbSalt.Length > 0 && dbHash != null && dbHash.Length > 0)
@@ -108,18 +112,19 @@ namespace AppSecAssignment
                     string pwdWithSalt = pwd + dbSalt;
                     byte[] hashWithSalt = hashing.ComputeHash(Encoding.UTF8.GetBytes(pwdWithSalt));
                     string userHash = Convert.ToBase64String(hashWithSalt);
-                    if (attempt <= 3)
+                    if (attempt < 3)
                     {
 
-                        /*SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MYDBConnection"].ConnectionString);
-                        string sql = "select Email,PasswordSalt FROM Users WHERE Email = @Email AND PasswordSalt = @PasswordSalt";
+                        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MYDBConnection"].ConnectionString);
+                        con.Open();
+                        string sql = "SELECT Email, PasswordHash FROM Users WHERE Email = @Email AND PasswordHash = @PasswordHash";
                         DataSet set = new DataSet();
                         SqlDataAdapter adapter = new SqlDataAdapter();
                         SqlCommand command = new SqlCommand(sql, con);
-                        command.Parameters.AddWithValue("@Email", userHash);
-                        command.Parameters.AddWithValue("@PasswordSalt", dbHash);*/
-
-                        if (userHash.Equals(dbHash))
+                        command.Parameters.AddWithValue("@Email", tbEmail.Text);
+                        command.Parameters.AddWithValue("@PasswordHash", dbHash);
+                        SqlDataReader read = command.ExecuteReader();
+                        if (read.HasRows && userHash.Equals(dbHash))
                         {
                             Session["LoggedIn"] = tbEmail.Text.Trim();
 
@@ -129,10 +134,27 @@ namespace AppSecAssignment
 
                             Response.Redirect("Homepage.aspx", false);
                         }
+                        else if(attempt == 2)
+                        {
+                            Response.Redirect("RecoverAccount.aspx", false);
+
+                            
+                            attempt = 0;
+                            left = 2;
+                            
+                            
+                        }
                         else
                         {
-                            attempt++;
+                            attempt = attempt + 1;
+                            lblMsg.Text = left+" attempts left before account lockout!";
+                            left--;
+
                         }
+                        con.Close();
+                        
+                        
+                        
                     }
                     
                 } 
@@ -145,6 +167,22 @@ namespace AppSecAssignment
             finally { }
 
         }
-}
+        
+        protected void OnTimed(object source, ElapsedEventArgs e)
+    {
+            btnLogin.Enabled = false;
+    }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegistrationForm.aspx", false);
+
+        }
+
+        protected void btnRec_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecoverAccount.aspx", false);
+        }
+    }
+    
 }

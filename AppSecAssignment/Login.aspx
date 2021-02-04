@@ -5,8 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    
+                    <script src="https://www.google.com/recaptcha/api.js?render=6LdjCEUaAAAAAH43Z3uxxIPjhPEJtmehUViiAlPs"></script>
+
+    
 </head>
-<body>
+<body onload="window.history.forward();">
     <form id="form1" runat="server">
         <div>
             <asp:Table ID="Table1" runat="server" Height="113px" Width="753px">
@@ -28,9 +32,23 @@
                 </asp:TableRow>
                 </asp:Table>
             <asp:Label ID="lblMsg" runat="server"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnRec" runat="server" OnClick="btnRec_Click" Text="Recover account" Visible="False" />
+            <br />
+            <br />
+             <script>
+                 grecaptcha.ready(function () {
+                     grecaptcha.execute('6LdjCEUaAAAAAH43Z3uxxIPjhPEJtmehUViiAlPs', { action: 'Login.aspx' }).then(function (token) {
+                         document.getElementById("g-recaptcha-response").value = token;
+                     });
+                 });
+             </script>
             <br />
             <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" />
         </div>
     </form>
+    
 </body>
 </html>
