@@ -40,7 +40,7 @@
             }
         }
     </script>
-                <script src="https://www.google.com/recaptcha/api.js?render=6LdjCEUaAAAAAH43Z3uxxIPjhPEJtmehUViiAlPs"></script>
+                <!--script src="https://www.google.com/recaptcha/api.js?render=6LdjCEUaAAAAAH43Z3uxxIPjhPEJtmehUViiAlPs"></script-->
 
 </head>
 <body>
